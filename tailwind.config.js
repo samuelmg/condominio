@@ -13,9 +13,13 @@ export default {
 
     theme: {
         extend: {
-            fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-            },
+          fontFamily: {
+            roboto: ["Roboto", "sans-serif"],
+            cairo: ["Cairo"],
+          },
+          spacing: {
+            128: "32rem",
+          },
         },
     },
 
