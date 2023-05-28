@@ -24,5 +24,12 @@ class DatabaseSeeder extends Seeder
             EstadoSeeder::class,
             MunicipioSeeder::class,
         ]);
+
+        //Crea Registros para pruebas
+        if (array_search(config('app.env'), ['local', 'testing']) !== false) {
+            $this->call([
+                CondominioSeeder::class,
+            ]);
+        }
     }
 }
