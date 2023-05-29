@@ -14,14 +14,14 @@ return new class extends Migration
         Schema::create('condominios', function (Blueprint $table) {
             $table->id();
             $table->string('condominio');
-            $table->foreignId('pais_id')->constrained('paises');
-            $table->foreignId('estado_id')->constrained();
-            $table->foreignId('municipio_id')->constrained();
-            $table->string('localidad');
-            $table->string('colonia');
-            $table->string('calle');
-            $table->string('numero');
-            $table->string('cp', 6);
+            $table->foreignId('pais_id')->nullable();
+            $table->foreignId('estado_id')->nullable();
+            $table->foreignId('municipio_id')->nullable();
+            $table->string('localidad')->default('');
+            $table->string('colonia')->default('');
+            $table->string('calle')->default('');
+            $table->string('numero')->default('');
+            $table->string('cp', 10)->default('');
             $table->timestamps();
         });
     }

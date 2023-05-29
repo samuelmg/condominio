@@ -30,6 +30,9 @@ test('new users can register', function () {
     ]);
 
     $this->assertAuthenticated();
+
+    expect(auth()->user()->condominios)->toHaveCount(1);
+
     $response->assertRedirect(RouteServiceProvider::HOME);
 })->skip(function () {
     return ! Features::enabled(Features::registration());
