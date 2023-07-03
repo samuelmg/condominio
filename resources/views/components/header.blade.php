@@ -83,10 +83,15 @@
                     <a href="/profile" class="block px-4 py-2 text-sm text-gray-600 capitalize transition-colors duration-200 transform hover:bg-gray-100">
                         Settings
                     </a>
-    
-                    <a href="/sign-in" class="block px-4 py-2 text-sm text-gray-600 capitalize transition-colors duration-200 transform hover:bg-gray-100">
-                        Sign Out
-                    </a>
+
+                    <form method="POST" action="{{ route('logout') }}" x-data>
+                        @csrf
+                        <a href="{{ route('logout') }}" class="block px-4 py-2 text-sm text-gray-600 capitalize transition-colors duration-200 transform hover:bg-gray-100"
+                            @click.prevent="$root.submit();"
+                        >
+                            {{ __('Log Out') }}
+                        </a>
+                    </form>
                 </div>
             </div>
         </div>
