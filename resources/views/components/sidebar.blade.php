@@ -11,23 +11,23 @@
         <div class="space-y-4">
             <h3 class="px-4 text-sm tracking-wider text-gray-400 uppercase">PAGES</h3>
     
-            {{-- <a class="flex items-center px-4 py-2 {{ $page->selected('') ? 'text-gray-600 bg-gray-200' : 'text-gray-500 hover:text-gray-600 hover:bg-gray-100' }} transition-colors duration-200 transform rounded-lg bg-opacity-40" href="/">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <a class="flex items-center px-4 py-2 {{-- $page->selected('')?'text-gray-600bg-gray-200':'text-gray-500hover:text-gray-600hover:bg-gray-100' --}} transition-colors duration-200 transform rounded-lg bg-opacity-40" href="{{ route('vivienda.index') }}">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                 </svg>
     
-                <span class="mx-3 font-medium capitalize">Dashboard</span>
+                <span class="mx-3 font-medium capitalize">Viviendas</span>
             </a>
 
-            <a class="flex items-center px-4 py-2 {{ $page->selected('forms') ? 'text-gray-600 bg-gray-200' : 'text-gray-500 hover:text-gray-600 hover:bg-gray-100' }} transition-colors duration-300 transform rounded-lg bg-opacity-40" href="/forms">
+            <a class="flex items-center px-4 py-2 {{-- $page->selected('forms')?'text-gray-600bg-gray-200':'text-gray-500hover:text-gray-600hover:bg-gray-100' --}} transition-colors duration-300 transform rounded-lg bg-opacity-40" href="{{ route('vecinos.index') }}">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
                 </svg>
     
-                <span class="mx-3 font-medium capitalize">forms</span>
+                <span class="mx-3 font-medium capitalize">Vecinos</span>
             </a>
 
-            <a class="flex items-center px-4 py-2 {{ $page->selected('charts') ? 'text-gray-600 bg-gray-200' : 'text-gray-500 hover:text-gray-600 hover:bg-gray-100' }} transition-colors duration-300 transform rounded-lg bg-opacity-40" href="/charts">
+            {{-- <a class="flex items-center px-4 py-2 {{ $page->selected('charts') ? 'text-gray-600 bg-gray-200' : 'text-gray-500 hover:text-gray-600 hover:bg-gray-100' }} transition-colors duration-300 transform rounded-lg bg-opacity-40" href="/charts">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
