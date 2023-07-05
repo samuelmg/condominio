@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PersonaController;
+use App\Http\Controllers\ViviendaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,4 +31,7 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::resource('vivienda', ViviendaController::class);
+    Route::resource('vecinos', PersonaController::class)->parameters(['vecinos' => 'persona']);
 });
