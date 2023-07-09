@@ -1,10 +1,10 @@
 @props([
-    'name',
+    'name' => null,
     'label' => null,
     'placeholder' => '',
 ])
 <div>
-    <label for="{{ $name }}" class="block text-sm text-gray-700 capitalize">{{ $label ?? $name }}</label>
+    <label for="{{ $attributes->whereStartsWith('wire:model')->first() ?? $name }}" class="block text-sm text-gray-700 capitalize">{{ $label ?? $name }}</label>
     <input
         {{ $attributes->whereStartsWith('wire:model') }}
         {{ $attributes->merge(['type' => 'text']) }}

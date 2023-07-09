@@ -10,12 +10,12 @@ use Illuminate\View\Component;
 class Select extends Component
 {
     public Collection $options;
+    public $name;
 
     /**
      * Create a new component instance.
      */
     public function __construct(
-        public string $name,
         public string $label,
         public bool $agregarValorVacio = false,
         $options,

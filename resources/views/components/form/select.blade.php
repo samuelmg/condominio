@@ -1,9 +1,9 @@
 <div>
-    <label for="{{ $name }}" class="block text-sm text-gray-700 capitalize">{{ $label ?? $name }}</label>
+    <label for="{{ $attributes->whereStartsWith('wire:model')->first() ?? $name }}" class="block text-sm text-gray-700 capitalize">{{ $label ?? $name }}</label>
 
     <select
         {{ $attributes->whereStartsWith('wire:model') }}
-        name="{{ $name }}"
+        name="{{ $attributes->whereStartsWith('wire:model')->first() ?? $name }}"
         class="block w-full px-4 py-2.5 mt-2 text-gray-600 placeholder-gray-400 bg-white border border-gray-200 rounded-md focus:border-indigo-400 focus:outline-none focus:ring focus:ring-indigo-300 focus:ring-opacity-40"
     >
         @if($agregarValorVacio)

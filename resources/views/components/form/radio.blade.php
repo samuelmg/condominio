@@ -1,5 +1,5 @@
 @props([
-    'name',
+    'name' => null,
     'label',
     'value',
     'checkedValue' => null,
@@ -7,7 +7,7 @@
 <div {{ $attributes->merge(['class' => 'flex items-center']) }}>
     <input
         type="radio"
-        name="{{ $name }}"
+        name="{{ $attributes->whereStartsWith('wire:model')->first() ?? $name }}"
         id="radio-{{ $value }}"
         value="{{ $value }}"
         class="p-2 bg-white border border-gray-200 rounded-full focus:border-indigo-400 focus:outline-none focus:ring focus:ring-indigo-300 focus:ring-opacity-40"
