@@ -1,9 +1,5 @@
 <?php
 
-use App\Models\Estado;
-use App\Models\Municipio;
-use App\Models\Pais;
-
 test('catálogo de paises', function () {
     array_search(config('app.env'), ['local', 'testing']) !== false
             ? $cantidadPaises = 1
