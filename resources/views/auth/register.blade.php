@@ -21,6 +21,11 @@
             </div>
 
             <div class="mt-6">
+                <label for="tel" class="block mb-2 text-sm text-gray-600">Número Telefónico</label>
+                <input type="number" name="tel" id="tel" value="{{ old('tel') }}" class="w-full px-3 py-2 placeholder-gray-300 border border-gray-200 rounded-md focus:outline-none focus:ring focus:border-indigo-400 focus:ring-indigo-300 focus:ring-opacity-40" />
+            </div>
+
+            <div class="mt-6">
                 <label for="email" class="block mb-2 text-sm text-gray-600">{{ __('Email') }}</label>
                 <input type="email" name="email" id="email" value="{{ old('email') }}" class="w-full px-3 py-2 placeholder-gray-300 border border-gray-200 rounded-md focus:outline-none focus:ring focus:border-indigo-400 focus:ring-indigo-300 focus:ring-opacity-40" />
             </div>
