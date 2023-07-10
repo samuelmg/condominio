@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Persona;
+use App\Models\Scopes\CondominioScope;
 use App\Providers\RouteServiceProvider;
 use Laravel\Fortify\Features;
 use Laravel\Jetstream\Jetstream;
@@ -20,9 +22,13 @@ test('registration screen cannot be rendered if support is disabled', function (
     return Features::enabled(Features::registration());
 }, 'Registration support is enabled.');
 
-test('new users can register', function () {
+test('new users can register if tel in personas table', function () {
+    $persona = Persona::withoutGlobalScope(CondominioScope::class)
+        ->find(fake()->numberBetween(1, 30));
+
     $response = $this->post('/register', [
         'name' => 'Test User',
+        'tel' => $persona->tel_celular,
         'email' => 'test@example.com',
         'password' => 'password',
         'password_confirmation' => 'password',
