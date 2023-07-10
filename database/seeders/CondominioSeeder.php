@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Condominio;
+use App\Models\Persona;
 use App\Models\User;
 use App\Models\Vivienda;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -19,13 +20,22 @@ class CondominioSeeder extends Seeder
             ->hasAttached(
                 User::factory()
                     ->state(function (array $attributes) {
-                        return ['email' => 'admin@test.com'];
+                        return ['email' => 'admin@test.com', 'tel' => '1122334455'];
                     })
                     ->withPersonalTeam(),
                 ['role' => 'Administrador']
             )
-            ->has(Vivienda::factory()->count(30))
-            // ->count(1)
+            ->has(
+                Vivienda::factory()
+                    ->hasAttached(
+                        Persona::factory()
+                            ->state(function (array $attributes, Vivienda $vivienda) {
+                                return ['condominio_id' => $vivienda->condominio_id];
+                            }),
+                        ['tipo' => fake()->randomElement(['Dueño', 'Inquilino'])]
+                    )
+                    ->count(30)
+                )
             ->create();
     }
 }
